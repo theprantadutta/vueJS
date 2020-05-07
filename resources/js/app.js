@@ -9,8 +9,26 @@ Vue.use(VueRouter);
 
 import {routes} from "./routes";
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+//Sweet Alert 2
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2'
+
+// CommonJS
+//const Swal = require('sweetalert2')
+window.Swal = Swal;
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    onOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+});
+
+window.Toast = Toast;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('admin-main', require('./components/admin/AdminMaster.vue').default);
