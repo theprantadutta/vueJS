@@ -53126,10 +53126,15 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return routes; });
 /* harmony import */ var _components_admin_AdminHome__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/admin/AdminHome */ "./resources/js/components/admin/AdminHome.vue");
+/* harmony import */ var _components_ExampleComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/ExampleComponent */ "./resources/js/components/ExampleComponent.vue");
+
 
 var routes = [{
   path: '/home',
   component: _components_admin_AdminHome__WEBPACK_IMPORTED_MODULE_0__["default"]
+}, {
+  path: '/post',
+  component: _components_ExampleComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
 }];
 
 /***/ }),
