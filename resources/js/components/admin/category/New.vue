@@ -8,11 +8,12 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" v-on:click.prevent="addCategory()">
+                <form role="form" @submit.prevent="addCategory">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="categoryId">Add New Category</label>
-                            <input type="text" class="form-control" id="categoryId" placeholder="Add New Category" v-model="form.cat_name" name="cat_name">
+                            <input type="text" class="form-control" id="categoryId" placeholder="Add New Category" v-model="form.cat_name" name="cat_name" :class="{ 'is-invalid': form.errors.has('cat_name') }">
+                            <has-error :form="form" field="cat_name"></has-error>
                         </div>
                     </div>
                     <!-- /.card-body -->
@@ -45,7 +46,7 @@
             addCategory(){
                 this.form.post('/add-category')
                     .then((response)=>{
-                        console.log(response.data)
+                        this.$router.push('/category-list')
                     })
                     .catch(()=>{
 
