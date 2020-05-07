@@ -1,4 +1,7 @@
+import AdminHome from './components/admin/AdminHome'
 export const routes = [
-    { path: '/foo', component: Foo },
-    { path: '/bar', component: Bar }
+    {
+        path: '/home',
+        component: AdminHome
+    }
 ];
