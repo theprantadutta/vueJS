@@ -23,7 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Category
 Route::post('/add-category','CategoryController@addCategory');
+Route::get('category','CategoryController@allCategory');
 
 
 
-Route::get('/{anypath}', 'HomeController@index')->where('path','.*');
+//Route::get('/{anypath}', 'HomeController@index')->where('path','.*');
