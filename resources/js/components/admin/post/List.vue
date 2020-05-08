@@ -1,0 +1,85 @@
+<template>
+    <div>
+        <!-- Main content -->
+        <section class="content">
+            <div class="row justify-content-around">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Post List</h3>
+                            <div class="card-tools">
+                                <router-link to="" class="btn btn-success">Add Post</router-link>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Sl</th>
+                                    <th>User</th>
+                                    <th>Category</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Photo</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr v-for="(posts,index) in allPost" :key="posts.id">
+                                    <td>{{ index+1 }}</td>
+                                    <td>{{ posts.user.name }}</td>
+                                    <td>{{ posts.category.cat_name }}</td>
+                                    <td>{{ posts.title | shortLength(20,"---" ) }}</td>
+                                    <td>{{ posts.description | shortLength(40,"...")}}</td>
+                                    <td><img :src="posts.photo" alt="" width="40" height="50"></td>
+                                    <td><a class="" href="">Edit</a>
+                                        <a class="" href="">Delete</a>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                                <!--<tfoot>
+                                <tr>
+                                    <th>Rendering engine</th>
+                                    <th>Browser</th>
+                                    <th>Platform(s)</th>
+                                    <th>Engine version</th>
+                                    <th>CSS grade</th>
+                                </tr>
+                                </tfoot>-->
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "List",
+        mounted() {
+            this.$store.dispatch('getAllPost')
+        },
+        computed:{
+            allPost(){
+                return this.$store.getters.getAllPost
+            }
+        },
+        methods: {
+
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>

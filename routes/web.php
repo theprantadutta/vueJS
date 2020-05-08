@@ -27,5 +27,5 @@ Route::get('category','CategoryController@allCategory');
 Route::get('deleteCategory/{id}','CategoryController@deleteCategory');
 Route::get('toEditCategory/{id}','CategoryController@toEditCategory');
 Route::post('updateCategory/{id}','CategoryController@updateCategory');
-
+Route::get('post','PostController@allPost');
 //Route::get('/{anypath}', 'HomeController@index')->where('path','.*');
