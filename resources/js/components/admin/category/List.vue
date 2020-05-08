@@ -27,7 +27,7 @@
                                     <td>{{ index+1 }}</td>
                                     <td>{{ category.cat_name }}</td>
                                     <td>{{ category.created_at | timeformat }}</td>
-                                    <td><a class="btn btn-primary" href="">Edit</a>
+                                    <td><router-link :to="`/edit-category/${category.id}`" class="btn btn-primary" href="">Edit</router-link>
                                         <a class="btn btn-danger" href="" @click.prevent = "deleteCategory(category.id)">Delete</a>
                                     </td>
                                 </tr>
