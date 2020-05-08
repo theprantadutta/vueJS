@@ -12,6 +12,12 @@ const store = new Vuex.Store(
 );
 window.store = store;
 
+//Moment JS
+const moment = require('moment');
+Vue.filter('timeformat',(arg)=>{
+    return moment(arg).format("MMM Do YYYY");
+});
+
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 

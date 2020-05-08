@@ -18,16 +18,17 @@
                                 <tr>
                                     <th>Sl</th>
                                     <th>Name</th>
+                                    <th>Date</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr v-for="(category,index) in getAllCategory" :key="category.id">
                                     <td>{{ index+1 }}</td>
-                                    <td>{{ category.cat_name }}
-                                    </td>
-                                    <td><a href="">Edit</a>
-                                        <a href="">Delete</a>
+                                    <td>{{ category.cat_name }}</td>
+                                    <td>{{ category.created_at | timeformat }}</td>
+                                    <td><a class="btn btn-primary" href="">Edit</a>
+                                        <a class="btn btn-danger" href="">Delete</a>
                                     </td>
                                 </tr>
 
