@@ -28,7 +28,7 @@
                                     <td>{{ category.cat_name }}</td>
                                     <td>{{ category.created_at | timeformat }}</td>
                                     <td><a class="btn btn-primary" href="">Edit</a>
-                                        <a class="btn btn-danger" href="">Delete</a>
+                                        <a class="btn btn-danger" href="" @click.prevent = "deleteCategory(category.id)">Delete</a>
                                     </td>
                                 </tr>
 
@@ -68,7 +68,39 @@
             }
         },
         methods: {
+            deleteCategory(id){
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                })
+                .then((result) => {
+                    if (result.value) {
+                        axios.get('/deleteCategory/'+id)
+                        this.$store.dispatch("allCategory")
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
 
+                    /*this.$store.dispatch("allCategory")
+                    .then(()=>{
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Category Deleted Successfully'
+                        })
+                    })
+                        .catch(()=>{
+
+                        })*/
+            }
         }
     }
 </script>
