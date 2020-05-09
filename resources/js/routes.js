@@ -29,11 +29,11 @@ export const routes = [
         component: PostList
     },
     {
-        path: '/add-category',
+        path: '/add-post',
         component: AddPost
     },
     {
-        path: '/edit-category/:categoryId',
+        path: '/edit-post/:categoryId',
         component: EditPost
     }
 ];

@@ -40,6 +40,15 @@ const Toast = Swal.mixin({
 
 window.Toast = Toast;
 
+//MarkDown Editor
+import 'v-markdown-editor/dist/v-markdown-editor.css';
+
+import Editor from 'v-markdown-editor'
+
+// global register
+Vue.use(Editor);
+
+
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('admin-main', require('./components/admin/AdminMaster.vue').default);
 

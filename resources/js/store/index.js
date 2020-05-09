@@ -1,7 +1,8 @@
 export default {
     state: {
         category: [],
-        post: []
+        post: [],
+        user: []
     },
     getters: {
         getCategory(state){
@@ -9,6 +10,9 @@ export default {
         },
         getAllPost(state){
             return state.post
+        },
+        getAllUser(state){
+            return state.user
         }
     },
     actions: {
@@ -24,6 +28,12 @@ export default {
                 .then((response)=>{
                     context.commit('allPost',response.data.posts)
                 })
+        },
+        getAllUser(context){
+            axios.get('/users')
+                .then((response =>{
+                    context.commit('mUser',response.data.users)
+                }))
         }
     },
     mutations: {
@@ -32,6 +42,9 @@ export default {
         },
         allPost(state, payload){
             return state.post = payload;
+        },
+        mUser(state, payload){
+            return state.user = payload;
         }
     }
 }
