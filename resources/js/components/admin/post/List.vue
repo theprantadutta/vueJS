@@ -34,7 +34,7 @@
                                     <td>{{ posts.title | shortLength(20,"---" ) }}</td>
                                     <td>{{ posts.description | shortLength(40,"...")}}</td>
                                     <td><img :src="ourImage(posts.photo)" alt="" width="40" height="50"></td>
-                                    <td><a class="" href="">Edit</a>
+                                    <td><router-link class="" :to="`/edit-post/${posts.id}`">Edit</router-link>
                                         <a class="" href="" @click.prevent = "deletePost(posts.id)">Delete</a>
                                     </td>
                                 </tr>

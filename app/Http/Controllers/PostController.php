@@ -53,4 +53,50 @@ class PostController extends Controller
             @unlink($photo);
         }
     }
+
+    public function toEditPost($id){
+        $post = Post::find($id);
+        return response()->json([
+            'post' => $post
+        ],200);
+    }
+
+    public function updatePost(Request $request, $id){
+        $validatedData = $request->validate([
+            'title' => 'required|min:2|max:50',
+            'description' => 'required|min:2|max:500',
+            'cat_id' => 'required|integer',
+            'user_id' => 'required|integer',
+            'photo' => 'required',
+        ]);
+
+        $post = Post::find($id);
+
+        $requestPhoto = $request->photo;
+        $postPhoto = $post->photo;
+        if ($requestPhoto != $postPhoto){
+            $stringPos = strpos($requestPhoto,';');
+            $sub = substr($requestPhoto,0,$stringPos);
+            $extension = explode('/',$sub)[1];
+            $name = time().".".$extension;
+            $img = Image::make($requestPhoto)->resize(200, 200);
+            $upload_path = public_path()."/uploadImage/";
+            $image = $upload_path.$post->photo;
+            $img->save($upload_path.$name);
+            //checking if the image exists in public folder
+            if (file_exists($image)){
+                @unlink($image);
+            }
+        }
+        else {
+            $name = $post->photo;
+        }
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->cat_id = $request->cat_id;
+        $post->user_id = $request->user_id;
+        $post->photo = $name;
+
+        $post->save();
+    }
 }

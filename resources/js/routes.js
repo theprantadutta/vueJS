@@ -33,7 +33,7 @@ export const routes = [
         component: AddPost
     },
     {
-        path: '/edit-post/:categoryId',
+        path: '/edit-post/:postId',
         component: EditPost
     }
 ];
