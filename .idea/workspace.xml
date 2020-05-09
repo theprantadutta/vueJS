@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="586c9ce4-868b-406b-bc6c-9ce298970101" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vueJS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vueJS.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/profilePictures/61ca9e4507e642a02454cd1630a0bdc9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/post/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/post/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/admin/post/New.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/post/New.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +189,7 @@
       <workItem from="1588937810926" duration="146000" />
       <workItem from="1588938614783" duration="15244000" />
       <workItem from="1589022900145" duration="1737000" />
-      <workItem from="1589026770245" duration="18294000" />
+      <workItem from="1589026770245" duration="20028000" />
     </task>
     <servers />
   </component>

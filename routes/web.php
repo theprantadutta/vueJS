@@ -30,4 +30,5 @@ Route::post('updateCategory/{id}','CategoryController@updateCategory');
 Route::get('post','PostController@allPost');
 Route::get('users','HomeController@allUsers');
 Route::post('savePost','PostController@savePost');
+Route::get('deletePost/{id}','PostController@deletePost');
 //Route::get('/{anypath}', 'HomeController@index')->where('path','.*');

@@ -33,9 +33,9 @@
                                     <td>{{ posts.category.cat_name }}</td>
                                     <td>{{ posts.title | shortLength(20,"---" ) }}</td>
                                     <td>{{ posts.description | shortLength(40,"...")}}</td>
-                                    <td><img :src="posts.photo" alt="" width="40" height="50"></td>
+                                    <td><img :src="ourImage(posts.photo)" alt="" width="40" height="50"></td>
                                     <td><a class="" href="">Edit</a>
-                                        <a class="" href="">Delete</a>
+                                        <a class="" href="" @click.prevent = "deletePost(posts.id)">Delete</a>
                                     </td>
                                 </tr>
 
@@ -75,7 +75,35 @@
             }
         },
         methods: {
+            ourImage(img){
+                return "uploadImage/"+img;
+            },
+            deletePost(id){
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                })
 
+                .then((result) => {
+                    if (result.value) {
+                        axios.get('/deletePost/'+id)
+                        this.$store.dispatch("getAllPost")
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+                .catch(()=>{
+
+                })
+            }
         }
     }
 </script>

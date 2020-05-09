@@ -4855,7 +4855,7 @@ __webpack_require__.r(__webpack_exports__);
         reader.onload = function (event) {
           // The file's text will be printed here
           _this.form.photo = event.target.result;
-          console.log(event.target.result);
+          console.log(event);
         };
 
         reader.readAsDataURL(file);
@@ -4962,7 +4962,32 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.getAllPost;
     }
   },
-  methods: {}
+  methods: {
+    ourImage: function ourImage(img) {
+      return "uploadImage/" + img;
+    },
+    deletePost: function deletePost(id) {
+      var _this = this;
+
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(function (result) {
+        if (result.value) {
+          axios.get('/deletePost/' + id);
+
+          _this.$store.dispatch("getAllPost");
+
+          Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+        }
+      })["catch"](function () {});
+    }
+  }
 });
 
 /***/ }),
@@ -88149,7 +88174,7 @@ var render = function() {
                         _c("td", [
                           _c("img", {
                             attrs: {
-                              src: posts.photo,
+                              src: _vm.ourImage(posts.photo),
                               alt: "",
                               width: "40",
                               height: "50"
@@ -88157,7 +88182,23 @@ var render = function() {
                           })
                         ]),
                         _vm._v(" "),
-                        _vm._m(1, true)
+                        _c("td", [
+                          _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "" },
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.deletePost(posts.id)
+                                }
+                              }
+                            },
+                            [_vm._v("Delete")]
+                          )
+                        ])
                       ])
                     }),
                     0
@@ -88192,16 +88233,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Action")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "" } }, [_vm._v("Delete")])
     ])
   }
 ]

@@ -104,7 +104,7 @@
                     reader.onload = event=> {
                         // The file's text will be printed here
                         this.form.photo = event.target.result
-                        console.log(event.target.result)
+                        console.log(event)
                     };
                     reader.readAsDataURL(file);
                 }
