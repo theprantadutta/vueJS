@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="586c9ce4-868b-406b-bc6c-9ce298970101" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploadImage/1589051854.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploadImage/1589051884.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/post/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/post/Edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/post/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/post/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -192,7 +187,7 @@
       <workItem from="1588937810926" duration="146000" />
       <workItem from="1588938614783" duration="15244000" />
       <workItem from="1589022900145" duration="1737000" />
-      <workItem from="1589026770245" duration="25330000" />
+      <workItem from="1589026770245" duration="26076000" />
     </task>
     <servers />
   </component>

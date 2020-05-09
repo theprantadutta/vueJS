@@ -8,6 +8,10 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function allPost(){
         //$posts = Post::with('user','category')->get(); //returns the posts with the users information from users table matching user ID
         $posts = Post::with('user','category')->orderBy('id','desc')->get();

@@ -27,10 +27,13 @@ Route::get('category','CategoryController@allCategory');
 Route::get('deleteCategory/{id}','CategoryController@deleteCategory');
 Route::get('toEditCategory/{id}','CategoryController@toEditCategory');
 Route::post('updateCategory/{id}','CategoryController@updateCategory');
-Route::get('post','PostController@allPost');
-Route::get('users','HomeController@allUsers');
-Route::post('savePost','PostController@savePost');
-Route::get('toEditPost/{id}','PostController@toEditPost');
-Route::post('updatePost/{id}','PostController@updatePost');
-Route::get('deletePost/{id}','PostController@deletePost');
+//Post
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::get('post','PostController@allPost');
+    Route::get('users','HomeController@allUsers');
+    Route::post('savePost','PostController@savePost');
+    Route::get('toEditPost/{id}','PostController@toEditPost');
+    Route::post('updatePost/{id}','PostController@updatePost');
+    Route::get('deletePost/{id}','PostController@deletePost');
+});
 //Route::get('/{anypath}', 'HomeController@index')->where('path','.*');
