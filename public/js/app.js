@@ -4820,7 +4820,7 @@ __webpack_require__.r(__webpack_exports__);
         description: '',
         cat_id: '',
         user_id: '',
-        photo: ""
+        photo: ''
       })
     };
   },
@@ -4841,14 +4841,25 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var file = event.target.files[0];
-      var reader = new FileReader();
 
-      reader.onload = function (event) {
-        // The file's text will be printed here
-        _this.form.photo = event.target.result;
-      };
+      if (file.size > 5242880) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'The Image is over 1MB',
+          footer: '<a href>Why do I have this issue?</a>'
+        });
+      } else {
+        var reader = new FileReader();
 
-      reader.readAsDataURL(file);
+        reader.onload = function (event) {
+          // The file's text will be printed here
+          _this.form.photo = event.target.result;
+          console.log(event.target.result);
+        };
+
+        reader.readAsDataURL(file);
+      }
     },
     addNewPost: function addNewPost() {
       var _this2 = this;
@@ -87995,8 +88006,7 @@ var render = function() {
                 _c("label", [_vm._v("Select Category")]),
                 _vm._v(" "),
                 _c("input", {
-                  class: { "is-invalid": _vm.form.errors.has("photo") },
-                  attrs: { type: "file", name: "photo" },
+                  attrs: { type: "file" },
                   on: {
                     change: function($event) {
                       return _vm.changePhoto($event)
@@ -88006,10 +88016,10 @@ var render = function() {
                 _vm._v(" "),
                 _c("img", {
                   attrs: {
-                    src: _vm.form.photo,
                     alt: "",
                     width: "80",
-                    height: "80"
+                    height: "80",
+                    src: _vm.form.photo
                   }
                 }),
                 _vm._v(" "),

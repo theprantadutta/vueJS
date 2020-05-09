@@ -8,7 +8,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" enctype=multipart/form-data @submit.prevent="addNewPost()">
+                <form role="form" enctype="multipart/form-data" @submit.prevent="addNewPost()">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="title">Add New Post</label>
@@ -43,8 +43,8 @@
 
                     <div class="form-group">
                         <label>Select Category</label>
-                        <input @change="changePhoto($event)" type="file" name="photo" :class="{ 'is-invalid': form.errors.has('photo') }">
-                        <img :src="form.photo" alt="" width="80" height="80">
+                        <input @change="changePhoto($event)" type="file" >
+                        <img alt="" width="80" height="80" :src="form.photo">
 
                         <has-error :form="form" field="photo" :class="{ 'is-invalid': form.errors.has('photo') }"></has-error>
                     </div>
@@ -72,7 +72,7 @@
                     description: '',
                     cat_id: '',
                     user_id: '',
-                    photo: "",
+                    photo: '',
                 })
             }
         },
@@ -91,12 +91,23 @@
         methods:{
             changePhoto(event){
                 let file = event.target.files[0];
-                let reader = new FileReader();
-                reader.onload = event=> {
-                    // The file's text will be printed here
-                    this.form.photo = event.target.result
-                };
-                reader.readAsDataURL(file);
+                if (file.size > 5242880){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'The Image is over 1MB',
+                        footer: '<a href>Why do I have this issue?</a>'
+                    })
+                }
+                else{
+                    let reader = new FileReader();
+                    reader.onload = event=> {
+                        // The file's text will be printed here
+                        this.form.photo = event.target.result
+                        console.log(event.target.result)
+                    };
+                    reader.readAsDataURL(file);
+                }
             },
             addNewPost(){
                 this.form.post('/savePost')
