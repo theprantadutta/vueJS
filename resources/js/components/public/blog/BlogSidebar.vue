@@ -57,7 +57,7 @@
 
         },
         mounted() {
-            this.$store.dispatch('getAllBlogPost');
+            this.$store.dispatch('latestPosts');
             this.$store.dispatch('allCategories')
         },
         computed:{
@@ -65,8 +65,8 @@
                 return this.$store.getters.allCategories
             },
             allBlogPost(){
-                return this.$store.getters.getAllBlogPost
-            }
+                return this.$store.getters.latestPost
+            },
         },
         methods:{
             RealSearch:_.debounce(function () {

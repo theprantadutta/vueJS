@@ -34,13 +34,13 @@
 
                       </div>
                       <p>
-                        {{ post.description |shortLength(500,'....')}}
+                        {{ post.description | shortLength(500,'....')}}
                       </p>
                       <div class="bottom-article">
                         <ul class="meta-post">
                           <li><i class="icon-calendar"></i><a href="#"> Mar 23, 2013</a></li>
                           <li><i class="icon-user"></i><a href="#">{{ post.user.name }}</a></li>
-                          <li><i class="icon-folder-open"></i><a href="#">{{ post.category.cat_name}}</a></li>
+                          <li v-if="post.category !== null"><i class="icon-folder-open"></i><a href="#">{{ post.category.cat_name}}</a></li>
                           <li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
                         </ul>
                           <router-link :to="`singleBlog/${post.id}`" class="pull-right">Continue reading <i class="icon-angle-right"></i></router-link>
