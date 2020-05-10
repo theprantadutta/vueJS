@@ -71,6 +71,12 @@ export default {
                     context.commit('getPostByCatId',response.data.posts)
                 }))
         },
+        searchPost(context, payload){
+            axios.get('/search?s='+payload)
+                .then((response => {
+                    context.commit('searchPost',response.data.posts)
+                }))
+        },
     },
     mutations: {
         mCategory(state,data){
@@ -93,6 +99,9 @@ export default {
         },
         getPostByCatId(state, payload){
             return state.blogPost = payload;
-        }
+        },
+        searchPost(state, payload){
+            return state.blogPost = payload;
+        },
     }
 }

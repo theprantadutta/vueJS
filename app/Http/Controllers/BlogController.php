@@ -35,4 +35,15 @@ class BlogController extends Controller
             'posts' => $posts
         ],200);
     }
+
+    public function searchPost(){
+        $search = \Request::get('s');
+        $posts = Post::with('user','category')
+            ->where('title', 'LIKE',"%$search%")
+            ->orWhere('description', 'LIKE',"%$search%")
+            ->get();
+        return response()->json([
+            'posts' => $posts
+        ],200);
+    }
 }
