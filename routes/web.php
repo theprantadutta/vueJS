@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public.index');
 });
 
 Auth::routes();
@@ -36,4 +36,6 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::post('updatePost/{id}','PostController@updatePost');
     Route::get('deletePost/{id}','PostController@deletePost');
 });
+//Blog Routers
+Route::get('blogPost','BlogController@getAllBlogPost');
 //Route::get('/{anypath}', 'HomeController@index')->where('path','.*');
