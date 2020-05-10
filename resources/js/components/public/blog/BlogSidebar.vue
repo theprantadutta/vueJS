@@ -11,17 +11,19 @@
                   <div class="widget">
                     <h5 class="widgetheading">Categories</h5>
                     <ul class="cat">
-                      <li v-for="category in allCategories"><i class="icon-angle-right"></i><a href="#">{{ category.cat_name }}</a><span> (20)</span></li>
+                      <li v-for="category in allCategories"><i class="icon-angle-right"></i>
+                          <router-link :to="`/categories/${category.id}`">{{ category.cat_name }}</router-link><span> (20)</span>
+                      </li>
                     </ul>
                   </div>
                   <div class="widget">
                     <h5 class="widgetheading">Latest posts</h5>
                     <ul class="recent">
                       <li v-for="(post,index) in allBlogPost" v-if="index < 5">
-                        <img :src="`uploadImage/${post.photo}`" height="40" width="40" class="pull-left" alt="" />
-                        <h6><a href="#">{{post.title}}</a></h6>
+                        <img :src="`uploadImage/${post.photo}`"  height="40" width="40" class="pull-left" alt="" />
+                        <h6><router-link :to="`/singleBlog/${post.id}`">{{post.title}}</router-link></h6>
                         <p>
-                          {{ post.description | shortlength(100,'...')}}
+                          {{ post.description | shortLength(100,'...')}}
                         </p>
                       </li>
                     </ul>

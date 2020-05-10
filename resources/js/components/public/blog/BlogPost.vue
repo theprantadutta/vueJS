@@ -81,8 +81,23 @@
             }
         },
         methods:{
+            getAllCategoryPost(){
+                if (this.$route.params.id != null){
+                    this.$store.dispatch('getPostByCatId',this.$route.params.id);
+                }
+                else{
+                    this.$store.dispatch('getAllBlogPost');
+                }
 
-        }
+            }
+        },
+        watch:{
+            $route(to,from){
+                this.getAllCategoryPost();
+
+            }
+        },
+
     }
 </script>
 

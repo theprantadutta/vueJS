@@ -11,7 +11,7 @@
                     <div class="post-heading">
                       <h3><a href="#">{{ post.title }}</a></h3>
                     </div>
-                    <img :src="`uploadImage/${post.photo}`" alt="" />
+                    <img :src="`/uploadImage/${post.photo}`" alt="" />
 
                   </div>
                   <p>
@@ -36,7 +36,7 @@
 
             </article>
           </div>
-            <BlogSideBar></BlogSideBar>
+            <BlogSideBar/>
         </div>
       </div>
     </section>
@@ -63,7 +63,19 @@
         },
         methods:{
 
+        },
+        watch: {
+            '$route' (to, from) {
+                if (from.params.id !== to.params.id) {
+                    window.location.reload(true);
+                }
+            }
         }
+       /* very very important !!!!         very very important !!!!          very very important !!!!
+
+       You can also call another function inside $route function writing the line from the mounted and calling both the function from mounted and $route
+
+        very very important !!!!         very very important !!!!          very very important !!!!*/
     }
 </script>
 
