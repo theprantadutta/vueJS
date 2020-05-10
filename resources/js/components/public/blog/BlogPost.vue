@@ -43,7 +43,7 @@
                           <li><i class="icon-folder-open"></i><a href="#">{{ post.category.cat_name}}</a></li>
                           <li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
                         </ul>
-                        <a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
+                          <router-link :to="`singleBlog/${post.id}`" class="pull-right">Continue reading <i class="icon-angle-right"></i></router-link>
                       </div>
                     </div>
                   </div>

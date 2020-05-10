@@ -10,6 +10,7 @@ import EditPost from './components/admin/Post/Edit'
 //Front End
 import PublicHome from './components/public/PublicHome'
 import BlogPost from './components/public/blog/BlogPost'
+import SingleBlog from './components/public/blog/SingleBlog'
 export const routes = [
     {
         path: '/home',
@@ -48,5 +49,9 @@ export const routes = [
     {
         path: '/blog',
         component: BlogPost
+    },
+    {
+        path: '/singleBlog/:id',
+        component: SingleBlog
     }
 ];
