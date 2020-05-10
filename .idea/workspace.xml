@@ -6,8 +6,6 @@
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/public/blog/BlogSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/public/blog/BlogSidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +188,7 @@
       <workItem from="1588938614783" duration="15244000" />
       <workItem from="1589022900145" duration="1737000" />
       <workItem from="1589026770245" duration="26327000" />
-      <workItem from="1589085891800" duration="27893000" />
+      <workItem from="1589085891800" duration="29185000" />
     </task>
     <servers />
   </component>
