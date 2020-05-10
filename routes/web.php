@@ -39,4 +39,5 @@ Route::middleware(['web', 'auth'])->group(function () {
 //Blog Routers
 Route::get('blogPost','BlogController@getAllBlogPost');
 Route::get('singlePost/{id}','BlogController@singlePost');
+Route::get('categories','BlogController@categories');
 //Route::get('/{anypath}', 'HomeController@index')->where('path','.*');
